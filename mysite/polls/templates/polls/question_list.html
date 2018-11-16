@@ -1,8 +1,9 @@
 {% extends 'polls/base.html' %}
 {% block content %}
+<h2>Danh sách câu hỏi!</h2>
     {% if list_quest %}
         {% for item in  list_quest %}
-            <p>{{ item.question_text }}</p>
+            <a href="{% url 'polls:details' item.id %}"><p>{{ item.question_text }}</p></a>
         {% endfor %}
     {% else %}
         <h3 style="color:red">no data</h3>
